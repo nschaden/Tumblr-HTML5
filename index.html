@@ -26,7 +26,7 @@
 	<link rel="alternate" type="application/rss+xml" href="{RSS}">
 	<link rel="stylesheet" href="http://static.tumblr.com/gvsbfe2/Oxtlw2u3d/boilerplate-base.css">
 
-	<style type="text/css" type="screen">
+	<style type="text/css" media="screen">
 
 	::-moz-selection { background: #666; color: #fff; text-shadow: none; }
 	::selection { background: #666; color: #fff; text-shadow: none; }
@@ -131,7 +131,7 @@
 
         {block:Link}
 		<article class="hentry link">
-			<h2 class="entry-title"><a href="{URL}" {Target}>{Name}</h2>
+			<h2 class="entry-title"><a href="{URL}" {Target}>{Name}</a></h2>
 			{block:Description}
 			<div class="entry-content">
 			{Description}
@@ -196,7 +196,7 @@
         {/block:Audio}
        	
             <footer>
-	            {block:Date}<time class="updated" datetime="{Year}-{MonthNumberWithZero}-{Day} {24HourWidthZero}:{Minutes}:{Seconds}" pubdate><a href="{Permalink}">{TimeAgo}</a></time>{/block:Date}
+	            {block:Date}<time class="updated" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}"><a href="{Permalink}">{TimeAgo}</a></time>{/block:Date}
 	    		{block:NoteCount}<a class="note-count" href="{Permalink}">{NoteCount}</a>{/block:NoteCount}
 				{block:HasTags} 
 				<ul class="tags">
