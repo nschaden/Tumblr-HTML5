@@ -196,17 +196,17 @@
 		<p id="description">{Description}</p>
         {/block:Description}
         <nav>
-        {block:HasPages}
+        	{block:HasPages}
 			{block:Pages}
 			<a href="{URL}">{Label}</a>
 			{/block:Pages}
+			{/block:HasPages}
 			{block:AskEnabled}
 			<a href="/ask">{AskLabel}</a>
 			{/block:AskEnabled}
             {block:SubmissionsEnabled}
             <a href="/submit">{SubmitLabel}</a>
             {/block:SubmissionsEnabled}
-		{/block:HasPages}
 		</nav>			
 	</header>
 	<div id="main" role="main">
