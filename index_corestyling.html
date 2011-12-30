@@ -83,11 +83,11 @@
 	}
 
 	/* navigation */
-	nav .prev, nav.newer {
+	nav .prev, nav .newer {
 		float: left;
 	}
 
-	nav .next, nav.older {
+	nav .next, nav .older {
 		float: right;
 	}
 
@@ -103,11 +103,12 @@
 
 	article footer time, article footer .note-count, article footer .tags {
 		display: inline;
-		padding-right: 2.618em;
+		padding-right: 1.618em;
 	}
 
 	article footer .tags {
 		list-style-type: none;
+		padding-left: 0;
 	}
 
 	article footer .tags li {
@@ -117,13 +118,14 @@
 
 	article footer .notes {
 		list-style: none;
+		margin: 2.618em 0;
+		padding: 0;
 	}
 
 	article footer .notes li {
-		list-style: disc;
-		margin: 0 0 1em;
+		list-style: disc inside;
+		margin: 0;
 	}
-
 
 	article.chat ul {
 		list-style: none;
@@ -132,6 +134,20 @@
 
 	article.chat ul li {
 		margin: 0 0 1em;
+	}
+
+	/* figure */
+	figure nav {
+		margin-top: 0;
+	}
+
+	figure img {
+		height: auto;
+		width: 100%;
+	}
+
+	figure iframe, figure object, figure video {
+		width: 100%;
 	}
 
 	/* header */
@@ -149,6 +165,7 @@
 
 	footer nav {
 		height: 1.618em;
+		margin-bottom: 2.618em;
 	}
 
 	footer form {
@@ -156,8 +173,14 @@
 	}
 
 	/* adaptive */
-	@media only screen and (min-width: 480px) {
+	@media screen and (max-width: 559px) {
+		#container {
+			width: 480px;
+		}
 
+		header,footer,#main {
+			width: 420px;
+		}
 	}
 	{CustomCSS}
 	</style>
@@ -317,7 +340,7 @@
 				{block:HasTags} 
 				<ul class="tags">
 			    	{block:Tags}
-			  		<li><a href="{TagURL}">{Tag}</a></li>
+			  		<li><a href="{TagURL}">#{Tag}</a></li>
 			    	{/block:Tags}
 				</ul>
 			   	{/block:HasTags}
