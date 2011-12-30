@@ -28,6 +28,7 @@
 
 	<style type="text/css" media="screen">
 
+	/* global */
 	::-moz-selection { background: #666; color: #fff; text-shadow: none; }
 	::selection { background: #666; color: #fff; text-shadow: none; }
 
@@ -35,12 +36,127 @@
 	a:focus { outline: thin dotted; }
 	a:hover, a:active { outline: 0; }
 
-	@media only screen and (min-width: 480px) {
-
-
+	#container {
+		margin: 50px auto;
+		position: relative;
+		width: 560px;
 	}
 
-	@media only screen and (min-width: 768px) {
+	header,footer,#main {
+		margin: 0 30px;
+		width: 500px;
+	}
+
+	/* typography */
+	body {
+		background-color: {color:Background};
+		color: {color:Text};
+		font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+		font-size: 93.75%;
+		line-height: 1.618;
+	}
+
+	h1,h2,h3,h4,h5 {
+		line-height: 1;
+		margin-bottom: 1em;
+	}
+
+	h1 {
+		font-size: 2.618em;
+	}
+
+	h2 {
+		font-size: 1.618em;
+	}
+
+	p {
+		margin: 0 0 1.618em;
+	}
+
+	blockquote, figcaption, nav {
+		margin: 1em 0;
+	}
+
+	blockquote {
+		border-left: 1px solid #ccc;
+		padding: 0 1.618em;
+	}
+
+	/* navigation */
+	nav .prev, nav.newer {
+		float: left;
+	}
+
+	nav .next, nav.older {
+		float: right;
+	}
+
+	/* articles */
+	article {
+		margin: 75px 0;
+	}
+
+	article footer {
+		font-size: 0.764em; /* 1 - 0.236 */
+		margin: 0;
+	}
+
+	article footer time, article footer .note-count, article footer .tags {
+		display: inline;
+		padding-right: 2.618em;
+	}
+
+	article footer .tags {
+		list-style-type: none;
+	}
+
+	article footer .tags li {
+		display: inline;
+		margin-right: 0.618em;
+	}
+
+	article footer .notes {
+		list-style: none;
+	}
+
+	article footer .notes li {
+		list-style: disc;
+		margin: 0 0 1em;
+	}
+
+
+	article.chat ul {
+		list-style: none;
+		padding: 0;
+	}
+
+	article.chat ul li {
+		margin: 0 0 1em;
+	}
+
+	/* header */
+	header h1 {
+		margin-bottom: 0.236em;
+	}
+	#description {
+		font-size: 0.764em; /* 1 - 0.236 */
+	}
+
+	/* footer */
+	footer {
+		font-size: 0.764em;
+	}
+
+	footer nav {
+		height: 1.618em;
+	}
+
+	footer form {
+		float: right;
+	}
+
+	/* adaptive */
+	@media only screen and (min-width: 480px) {
 
 	}
 	{CustomCSS}
@@ -206,7 +322,7 @@
 				</ul>
 			   	{/block:HasTags}
 			   	{block:PermalinkPage}
-			   	{block:PostNotes}<div>{PostNotes}</div>{/block:PostNotes}
+			   	{block:PostNotes}{PostNotes}{/block:PostNotes}
 			   {/block:PermalinkPage}   
             </footer>
 		</article>
@@ -215,21 +331,21 @@
 	<footer>
 		{block:PermalinkPagination}
 	   	<nav>
-	   		{block:PreviousPost}<a href="{PreviousPost}">« Previous</a>{/block:PreviousPost} 
-			{block:NextPost}<a href="{NextPost}">Next »</a>{/block:NextPost} 
+	   		{block:NextPost}<a class="prev" href="{NextPost}">« Previous</a>{/block:NextPost} 
+			{block:PreviousPost}<a class="next" href="{PreviousPost}">Next »</a>{/block:PreviousPost} 
 		</nav>
 	   	{/block:PermalinkPagination}
 	   	{block:IndexPage}
 	   	{block:Pagination}
 	   	<nav>
-	   		{block:PreviousPage}<a href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
-			{block:NextPage}<a href="{NextPage}">Older »</a>{/block:NextPage}
+	   		{block:PreviousPage}<a class="newer" href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
+			{block:NextPage}<a class="older" href="{NextPage}">Older »</a>{/block:NextPage}
 	   	</nav>
 	   	{/block:Pagination}
 	   	{/block:IndexPage}
 		<a href="{RSS}">RSS</a> / 
 		<a href="/archive">Archive</a> /
-		Arithmetica theme by <a href="http://log.samuelkelly.net">skelly</a> / Tweaked by <a href="http://www.nickschaden.com">nick</a>
+		Theme attribution here
 		<form action="/search" method="get">
 			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">
 		</form>

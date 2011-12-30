@@ -1,0 +1,256 @@
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+	{block:Description}
+	<meta name="description" content="{MetaDescription}">
+	{/block:Description}
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+
+	<!-- colors/customization -->
+    <meta name="color:Link" content="#0085cf">
+	<meta name="color:Background" content="#ffffff">
+	<meta name="color:Text" content="#232323">
+    <meta name="if:Include Google Analytics" content="0">
+    <meta name="if:Include Chrome Frame" content="1">
+
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<link rel="stylesheet" href="http://static.tumblr.com/gvsbfe2/Oxtlw2u3d/boilerplate-base.css">
+
+	<style type="text/css" media="screen">
+
+	::-moz-selection { background: #666; color: #fff; text-shadow: none; }
+	::selection { background: #666; color: #fff; text-shadow: none; }
+
+	a { color: {color:Link}; }
+	a:focus { outline: thin dotted; }
+	a:hover, a:active { outline: 0; }
+
+	@media only screen and (min-width: 480px) {
+
+
+	}
+
+	@media only screen and (min-width: 768px) {
+
+	}
+	{CustomCSS}
+	</style>
+
+	<script src="http://static.tumblr.com/gvsbfe2/NRelw0vo2/modernizr-2.0.6.min.js"></script>
+</head>
+<body>
+
+<div id="container">
+	<header>
+		<h1><a href="/">{Title}</a></h1>
+		{block:Description}
+		<p id="description">{Description}</p>
+        {/block:Description}
+        <nav>
+        {block:HasPages}
+			{block:Pages}
+			<a href="{URL}">{Label}</a>
+			{/block:Pages}
+			{block:AskEnabled}
+			<a href="/ask">{AskLabel}</a>
+			{/block:AskEnabled}
+            {block:SubmissionsEnabled}
+            <a href="/submit">{SubmitLabel}</a>
+            {/block:SubmissionsEnabled}
+		{/block:HasPages}
+		</nav>			
+	</header>
+	<div id="main" role="main">
+	{block:Posts}
+		{block:Text}
+		<article class="hentry text">
+			{block:Title}
+			<h2 class="entry-title">{Title}</h2>
+            {/block:Title}
+            <div class="entry-content">
+            {Body}
+            </div>
+        {/block:Text}
+
+        {block:Photo}
+		<article class="hentry photo">
+			<div class="entry-content">
+				<figure>
+					{LinkOpenTag}
+					<img src="{PhotoUrl-500}" alt="{PhotoAlt}" />
+					{LinkCloseTag}
+					<nav>
+						<a class="permalink" href="{LinkURL}">Permalink</a>
+						{block:HighRes}
+						<a class="high-res" href="{PhotoURL-HighRes}">High-res</a>
+						{/block:HighRes}
+					</nav>
+					{block:Caption}
+					<figcaption>
+						{Caption}
+					</figcaption>
+					{/block:Caption}
+				</figure>
+			</div>
+        {/block:Photo}
+
+        {block:Photoset}
+		<article class="hentry photoset">
+			<div class="entry-content">
+				<figure>
+					{Photoset-500}
+				
+					{block:Caption}
+					<figcaption>
+						{Caption}
+					</figcaption>
+					{/block:Caption}
+				</figure>
+			</div>
+        {/block:Photoset}
+
+        {block:Quote}
+		<article class="hentry quote">
+			<div class="entry-content">
+				<blockquote>{Quote}</blockquote>
+				{block:Source}
+                <p class="source-org vcard">{Source}</p>
+                {/block:Source}
+			</div>
+        {/block:Quote}
+
+        {block:Link}
+		<article class="hentry link">
+			<h2 class="entry-title"><a href="{URL}" {Target}>{Name}</a></h2>
+			{block:Description}
+			<div class="entry-content">
+			{Description}
+			</div>
+			{/block:Description}
+        {/block:Link}
+
+        {block:Chat}
+		<article class="hentry chat">
+			{block:Title}
+			<h2 class="entry-title">{Title}</h2>
+            {/block:Title}
+			<ul class="entry-content">
+				{block:Lines}
+				<li class="{Alt} member{UserNumber}">
+					{block:Label}
+                	<span class="label">{Label}</span>
+                    {/block:Label}
+					{Line}
+				</li>
+				{/block:Lines}
+			</ul>
+        {/block:Chat}
+
+        {block:Video}
+		<article class="hentry video">
+			<div class="entry-content">
+				<figure>
+					{Video-500}
+					{block:Caption}
+					<figcaption>
+						{Caption}
+					</figcaption>
+					{/block:Caption}
+				</figure>
+			</div>
+        {/block:Video}
+
+        {block:Audio}
+		<article class="hentry audio">
+			<div class="entry-content">
+				<figure>
+					{block:AlbumArt}
+					<img src="{AlbumArtURL}"/>
+					{/block:AlbumArt}
+					<div class="meta">
+						{block:TrackName}
+						<span class="title">{TrackName}</span>
+						{/block:TrackName}
+						{block:Artist}
+						<span class="artist">{Artist}</span>
+						{/block:Artist}
+					</div>
+					{AudioPlayerWhite}
+					{block:Caption}
+					<figcaption>
+						{Caption}
+					</figcaption>
+					{/block:Caption}
+				</figure>
+			</div>
+        {/block:Audio}
+       	
+            <footer>
+	            {block:Date}<time class="updated" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}"><a href="{Permalink}">{TimeAgo}</a></time>{/block:Date}
+	    		{block:NoteCount}<a class="note-count" href="{Permalink}">{NoteCount}</a>{/block:NoteCount}
+				{block:HasTags} 
+				<ul class="tags">
+			    	{block:Tags}
+			  		<li><a href="{TagURL}">{Tag}</a></li>
+			    	{/block:Tags}
+				</ul>
+			   	{/block:HasTags}
+			   	{block:PermalinkPage}
+			   	{block:PostNotes}<div>{PostNotes}</div>{/block:PostNotes}
+			   {/block:PermalinkPage}   
+            </footer>
+		</article>
+	{/block:Posts}
+	</div>
+	<footer>
+		{block:PermalinkPagination}
+	   	<nav>
+	   		{block:PreviousPost}<a href="{PreviousPost}">« Previous</a>{/block:PreviousPost} 
+			{block:NextPost}<a href="{NextPost}">Next »</a>{/block:NextPost} 
+		</nav>
+	   	{/block:PermalinkPagination}
+	   	{block:IndexPage}
+	   	{block:Pagination}
+	   	<nav>
+	   		{block:PreviousPage}<a href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
+			{block:NextPage}<a href="{NextPage}">Older »</a>{/block:NextPage}
+	   	</nav>
+	   	{/block:Pagination}
+	   	{/block:IndexPage}
+		<a href="{RSS}">RSS</a> / 
+		<a href="/archive">Archive</a> /
+		Theme attribution here
+		<form action="/search" method="get">
+			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">
+		</form>
+	</footer>
+</div>
+
+{block:IfIncludeGoogleAnalytics}
+<script>
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+</meta>
+{/block:IfIncludeGoogleAnalytics}
+
+{block:IncludeChromeFrame}
+<!--[if lt IE 7 ]>
+	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+<![endif]-->
+{/block:IncludeChromeFrame}
+</body>
+</html>
