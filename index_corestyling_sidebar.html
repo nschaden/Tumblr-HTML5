@@ -12,7 +12,7 @@
 	<meta name="description" content="{MetaDescription}">
 	{/block:Description}
 	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width">
 
 	<!-- colors/customization -->
     <meta name="color:Link" content="#0085cf">
@@ -39,12 +39,12 @@
 	#container {
 		margin: 50px auto;
 		position: relative;
-		width: 811px;
+		width: 841px;
 	}
 
 	header,footer {
 		margin: 0 30px;
-		width: 751px;
+		width: 781px;
 	}
 
 	header {
@@ -110,7 +110,7 @@
 		float: left;
 		font-size: 0.764em;
 		margin-left: 60px;
-		padding-top: 75px;
+		padding-top: 5.555em;
 		width: 191px;
 	}
 
@@ -118,11 +118,20 @@
 		font-size: 1em;
 	}
 
+	#side .first {
+		padding-top: 0;
+	}
+
+	#side .first h3 {
+		margin-top: 0.236em;
+	}
+
 	#side h3 {
 		margin-top: 0;
 	}
 
 	#side aside {
+		padding: 1.618em 0;
 		border-bottom: 1px solid #333;
 	}
 
@@ -130,13 +139,34 @@
 		border-bottom: none;
 	}
 
+	#side aside.following a {
+		display: inline;
+		float: left;
+		margin-bottom: 0.382em;
+		margin-right: 0.382em;
+	}
+
 	#side nav a {
 		display: block;
 	}
 
+	/* likes */
+	#likes {
+		list-style: none;
+		padding: 0;
+	}
+
+	#likes li {
+		margin: 0 0 1.618em;
+	}
+
+	#likes li img, #likes li iframe, #likes li object {
+		width: 100%;
+	}
+
 	/* articles */
 	article {
-		margin: 75px 0;
+		margin: 4.236em 0;
 	}
 
 	article footer {
@@ -217,7 +247,7 @@
 	}
 
 	/* adaptive */
-	@media screen and (max-width: 810px) {
+	@media screen and (max-width: 840px) {
 		#container { 
 			width: 560px;
 		}
@@ -225,6 +255,14 @@
 		header,footer,#main,#side {
 			margin: 0 30px;
 			width: 500px;
+		}
+
+		#side {
+			padding-top: 1em;
+		}
+
+		#likes li img, #likes li iframe, #likes li object {
+			width: 100%;
 		}
 	}
 
@@ -237,6 +275,15 @@
 			margin: 0 30px;
 			width: 420px;
 		}
+
+		#side {
+			padding-top: 1em;
+		}
+
+		#likes li img, #likes li iframe, #likes li object {
+			width: 100%;
+		}
+
 	}
 	{CustomCSS}
 	</style>
@@ -393,36 +440,34 @@
 	</div>
 	<div id="side" role="side">
 		{block:Description}
-		<aside>
+		<aside class="about first">
 			<h3>About</h3>
 			<p id="description">{Description}</p>
         </aside>
        	{/block:Description}
        	{block:Following}
-        <aside>
+        <aside class="following">
         	<h3>Following</h3>
-        	{block:Followed}<a href="{FollowedURL}">{FollowedPortraitURL-16}</a>{/block:Followed}
+        	{block:Followed}<a href="{FollowedURL}"><img src="{FollowedPortraitURL-24}"/></a>{/block:Followed}
+        	<div class="clearfix"></div>
         </aside>
         {/block:Following}
        	{block:Likes}
-        <aside>
+        <aside class="likes">
         	<h3>Likes</h3>
         	{Likes limit="5" summarize="150" width="191"}
         	<a class="more" href="/liked/by/{Name}">See More »</a>
         </aside>
         {/block:Likes}
-        <nav>
-        	{block:HasPages}
+    	{block:HasPages}
+    	<nav>
+    		<h3>Pages</h3>
 			{block:Pages}
 			<a href="{URL}">{Label}</a>
 			{/block:Pages}
-			{/block:HasPages}
-			{block:AskEnabled}
-			<a href="/ask">{AskLabel}</a>
-			{/block:AskEnabled}
-            {block:SubmissionsEnabled}
-            <a href="/submit">{SubmitLabel}</a>
-            {/block:SubmissionsEnabled}
+		</nav>
+		{/block:HasPages}
+        <nav class="links">
 		</nav>	
 
 	</div>
@@ -443,6 +488,12 @@
 	   	{/block:IndexPage}
 		<a href="{RSS}">RSS</a> / 
 		<a href="/archive">Archive</a> /
+		{block:AskEnabled}
+		<a href="/ask">{AskLabel}</a> /
+		{/block:AskEnabled}
+		{block:SubmissionsEnabled}
+		<a href="/submit">{SubmitLabel}</a> /
+		{/block:SubmissionsEnabled}
 		Theme attribution here
 		<form action="/search" method="get">
 			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">

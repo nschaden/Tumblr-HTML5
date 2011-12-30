@@ -12,7 +12,7 @@
 	<meta name="description" content="{MetaDescription}">
 	{/block:Description}
 	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta name="viewport" content="width=device-width">
 
 	<!-- colors/customization -->
     <meta name="color:Link" content="#0085cf">
@@ -93,7 +93,7 @@
 
 	/* articles */
 	article {
-		margin: 75px 0;
+		margin: 4.236em 0;
 	}
 
 	article footer {
@@ -151,6 +151,10 @@
 	}
 
 	/* header */
+	header {
+		text-align: center;
+	}
+
 	header h1 {
 		margin-bottom: 0.236em;
 	}
@@ -194,20 +198,7 @@
 		<h1><a href="/">{Title}</a></h1>
 		{block:Description}
 		<p id="description">{Description}</p>
-        {/block:Description}
-        <nav>
-        	{block:HasPages}
-			{block:Pages}
-			<a href="{URL}">{Label}</a>
-			{/block:Pages}
-			{/block:HasPages}
-			{block:AskEnabled}
-			<a href="/ask">{AskLabel}</a>
-			{/block:AskEnabled}
-            {block:SubmissionsEnabled}
-            <a href="/submit">{SubmitLabel}</a>
-            {/block:SubmissionsEnabled}
-		</nav>			
+        {/block:Description}			
 	</header>
 	<div id="main" role="main">
 	{block:Posts}
@@ -368,6 +359,17 @@
 	   	{/block:IndexPage}
 		<a href="{RSS}">RSS</a> / 
 		<a href="/archive">Archive</a> /
+		{block:HasPages}
+		{block:Pages}
+		<a href="{URL}">{Label}</a> /
+		{/block:Pages}
+		{/block:HasPages}
+		{block:AskEnabled}
+		<a href="/ask">{AskLabel}</a> /
+		{/block:AskEnabled}
+		{block:SubmissionsEnabled}
+		<a href="/submit">{SubmitLabel}</a> /
+		{/block:SubmissionsEnabled}
 		Theme attribution here
 		<form action="/search" method="get">
 			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">
