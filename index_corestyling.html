@@ -168,8 +168,17 @@
 	}
 
 	footer nav {
+		clear: both;
+		float: none;
+		margin-bottom: 0;
+		margin-top: 0;
+	}
+
+	footer nav.pagination {
+		float: right;
 		height: 1.618em;
 		margin-bottom: 2.618em;
+		width: auto;
 	}
 
 	footer form {
@@ -344,33 +353,35 @@
 	</div>
 	<footer>
 		{block:PermalinkPagination}
-	   	<nav>
+	   	<nav class="pagination">
 	   		{block:NextPost}<a class="prev" href="{NextPost}">« Previous</a>{/block:NextPost} 
 			{block:PreviousPost}<a class="next" href="{PreviousPost}">Next »</a>{/block:PreviousPost} 
 		</nav>
 	   	{/block:PermalinkPagination}
 	   	{block:IndexPage}
 	   	{block:Pagination}
-	   	<nav>
+	   	<nav class="pagination">
 	   		{block:PreviousPage}<a class="newer" href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
 			{block:NextPage}<a class="older" href="{NextPage}">Older »</a>{/block:NextPage}
 	   	</nav>
 	   	{/block:Pagination}
 	   	{/block:IndexPage}
-		<a href="{RSS}">RSS</a> / 
-		<a href="/archive">Archive</a> /
-		{block:HasPages}
-		{block:Pages}
-		<a href="{URL}">{Label}</a> /
-		{/block:Pages}
-		{/block:HasPages}
-		{block:AskEnabled}
-		<a href="/ask">{AskLabel}</a> /
-		{/block:AskEnabled}
-		{block:SubmissionsEnabled}
-		<a href="/submit">{SubmitLabel}</a> /
-		{/block:SubmissionsEnabled}
-		Theme attribution here
+	   	<nav>
+			<a href="{RSS}">RSS</a> / 
+			<a href="/archive">Archive</a> /
+			{block:HasPages}
+			{block:Pages}
+			<a href="{URL}">{Label}</a> /
+			{/block:Pages}
+			{/block:HasPages}
+			{block:AskEnabled}
+			<a href="/ask">{AskLabel}</a> /
+			{/block:AskEnabled}
+			{block:SubmissionsEnabled}
+			<a href="/submit">{SubmitLabel}</a> /
+			{/block:SubmissionsEnabled}
+			Theme attribution here
+		</nav>
 		<form action="/search" method="get">
 			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">
 		</form>
