@@ -2,13 +2,13 @@
 
 A simple, semantically clean HTML5 based base theme for Tumblr.
 
-Version 0.6 (beta)
+Version 0.7 (beta)
 Original Author: Nick Schaden
 http://nickschaden.com
 
 ## Core features
 
-* HTML structure based on the [HTML5 Boilerplate v2](http://html5boilerplate.com).
+* HTML structure based on the [HTML5 Boilerplate v3](http://html5boilerplate.com).
 * Aggressive usage of new semantic html5 elements.
 * References the hNews microformat specification when possible.
 * Bare-bones, core theme intended as starting point for a theme designer.

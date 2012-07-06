@@ -1,520 +1,522 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
-	{block:Description}
-	<meta name="description" content="{MetaDescription}">
-	{/block:Description}
-	<meta name="author" content="">
-	<meta name="viewport" content="width=device-width">
+  <title>{Title}{block:PostTitle}: {PostTitle}{/block:PostTitle}</title>
+  {block:Description}
+  <meta name="description" content="{MetaDescription}">
+  {/block:Description}
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width">
 
-	<!-- colors/customization -->
-    <meta name="color:Link" content="#0085cf">
-	<meta name="color:Background" content="#ffffff">
-	<meta name="color:Text" content="#232323">
-    <meta name="if:Include Google Analytics" content="0">
-    <meta name="if:Include Chrome Frame" content="1">
+  <!-- colors/customization -->
+  <meta name="color:Link" content="#0085cf">
+  <meta name="color:Background" content="#ffffff">
+  <meta name="color:Text" content="#232323">
+  <meta name="if:Include Google Analytics" content="0">
+  <meta name="if:Include Chrome Frame" content="1">
 
-	<link rel="shortcut icon" href="{Favicon}">
-	<link rel="apple-touch-icon" href="{PortraitURL-128}">
-	<link rel="alternate" type="application/rss+xml" href="{RSS}">
-	<link rel="stylesheet" href="http://static.tumblr.com/gvsbfe2/Oxtlw2u3d/boilerplate-base.css">
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="stylesheet" href="http://static.tumblr.com/gvsbfe2/tTWm6reab/boilerplate-base.css">
 
-	<style type="text/css" media="screen">
+  <style type="text/css" media="screen">
 
-	/* global */
-	::-moz-selection { background: #666; color: #fff; text-shadow: none; }
-	::selection { background: #666; color: #fff; text-shadow: none; }
+  /* global */
+  ::-moz-selection { background: #666; color: #fff; text-shadow: none; }
+  ::selection { background: #666; color: #fff; text-shadow: none; }
 
-	a { color: {color:Link}; }
-	a:focus { outline: thin dotted; }
-	a:hover, a:active { outline: 0; }
+  a { color: {color:Link}; }
+  a:focus { outline: thin dotted; }
+  a:hover, a:active { outline: 0; }
 
-	#container {
-		margin: 50px auto;
-		position: relative;
-		width: 841px;
-	}
+  #container {
+    margin: 50px auto;
+    position: relative;
+    width: 841px;
+  }
 
-	header,footer {
-		margin: 0 30px;
-		width: 781px;
-	}
+  header,footer {
+    margin: 0 30px;
+    width: 781px;
+  }
 
-	header {
-		text-align: center;
-	}
+  header {
+    text-align: center;
+  }
 
-	#main {
-		float: left;
-		margin: 0 30px;
-		width: 500px;
-	}
+  #main {
+    float: left;
+    margin: 0 30px;
+    width: 500px;
+  }
 
-	/* typography */
-	body {
-		background-color: {color:Background};
-		color: {color:Text};
-		font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
-		font-size: 93.75%;
-		line-height: 1.618;
-	}
+  /* typography */
+  body {
+    background-color: {color:Background};
+    color: {color:Text};
+    font-family: 'Helvetica Neue',helvetica,arial,sans-serif;
+    font-size: 93.75%;
+    line-height: 1.618;
+  }
 
-	h1,h2,h3,h4,h5 {
-		line-height: 1;
-		margin-bottom: 1em;
-	}
+  h1,h2,h3,h4,h5 {
+    line-height: 1;
+    margin-bottom: 1em;
+  }
 
-	h1 {
-		font-size: 2.618em;
-	}
+  h1 {
+    font-size: 2.618em;
+  }
 
-	h2 {
-		font-size: 1.618em;
-	}
+  h2 {
+    font-size: 1.618em;
+  }
 
-	h3 {
-		font-size: 1.618em;
-	}
+  h3 {
+    font-size: 1.618em;
+  }
 
-	p {
-		margin: 0 0 1.618em;
-	}
+  p {
+    margin: 0 0 1.618em;
+  }
 
-	blockquote, figcaption, nav {
-		margin: 1em 0;
-	}
+  blockquote, figcaption, nav {
+    margin: 1em 0;
+  }
 
-	blockquote {
-		border-left: 1px solid #ccc;
-		padding: 0 1.618em;
-	}
+  blockquote {
+    border-left: 1px solid #ccc;
+    padding: 0 1.618em;
+  }
 
-	/* navigation */
-	nav .prev, nav .newer {
-		float: left;
-	}
+  /* navigation */
+  nav .prev, nav .newer {
+    float: left;
+  }
 
-	nav .next, nav .older {
-		float: right;
-	}
+  nav .next, nav .older {
+    float: right;
+  }
 
-	/* sidebar */
-	#side {
-		float: left;
-		font-size: 0.764em;
-		margin-left: 60px;
-		padding-top: 5.555em;
-		width: 191px;
-	}
+  /* sidebar */
+  #side {
+    float: left;
+    font-size: 0.764em;
+    margin-left: 60px;
+    padding-top: 5.555em;
+    width: 191px;
+  }
 
-	#side #description {
-		font-size: 1em;
-	}
+  #side #description {
+    font-size: 1em;
+  }
 
-	#side .first {
-		padding-top: 0;
-	}
+  #side .first {
+    padding-top: 0;
+  }
 
-	#side .first h3 {
-		margin-top: 0.236em;
-	}
+  #side .first h3 {
+    margin-top: 0.236em;
+  }
 
-	#side h3 {
-		margin-top: 0;
-	}
+  #side h3 {
+    margin-top: 0;
+  }
 
-	#side aside {
-		padding: 1.618em 0;
-		border-bottom: 1px solid #333;
-	}
+  #side aside {
+    padding: 1.618em 0;
+    border-bottom: 1px solid #333;
+  }
 
-	#side aside:last {
-		border-bottom: none;
-	}
+  #side aside:last {
+    border-bottom: none;
+  }
 
-	#side aside.following a {
-		display: inline;
-		float: left;
-		margin-bottom: 0.382em;
-		margin-right: 0.382em;
-	}
+  #side aside.following a {
+    display: inline;
+    float: left;
+    margin-bottom: 0.382em;
+    margin-right: 0.382em;
+  }
 
-	#side nav a {
-		display: block;
-	}
+  #side nav a {
+    display: block;
+  }
 
-	/* likes */
-	#likes {
-		list-style: none;
-		padding: 0;
-	}
+  /* likes */
+  #likes {
+    list-style: none;
+    padding: 0;
+  }
 
-	#likes li {
-		margin: 0 0 1.618em;
-	}
+  #likes li {
+    margin: 0 0 1.618em;
+  }
 
-	#likes li img, #likes li iframe, #likes li object {
-		width: 100%;
-	}
+  #likes li img, #likes li iframe, #likes li object {
+    width: 100%;
+  }
 
-	/* articles */
-	article {
-		margin: 4.236em 0;
-	}
+  /* articles */
+  article {
+    margin: 4.236em 0;
+  }
 
-	article footer {
-		font-size: 0.764em; /* 1 - 0.236 */
-		margin: 0;
-	}
+  article footer {
+    font-size: 0.764em; /* 1 - 0.236 */
+    margin: 0;
+  }
 
-	article footer time, article footer .note-count, article footer .tags {
-		display: inline;
-		padding-right: 1.618em;
-	}
+  article footer time, article footer .note-count, article footer .tags {
+    display: inline;
+    padding-right: 1.618em;
+  }
 
-	article footer .tags {
-		list-style-type: none;
-		padding-left: 0;
-	}
+  article footer .tags {
+    list-style-type: none;
+    padding-left: 0;
+  }
 
-	article footer .tags li {
-		display: inline;
-		margin-right: 0.618em;
-	}
+  article footer .tags li {
+    display: inline;
+    margin-right: 0.618em;
+  }
 
-	article footer .notes {
-		list-style: none;
-		margin: 2.618em 0;
-		padding: 0;
-	}
+  article footer .notes {
+    list-style: none;
+    margin: 2.618em 0;
+    padding: 0;
+  }
 
-	article footer .notes li {
-		list-style: disc inside;
-		margin: 0;
-	}
+  article footer .notes li {
+    list-style: disc inside;
+    margin: 0;
+  }
 
-	article.chat ul {
-		list-style: none;
-		padding: 0;
-	}
+  article.chat ul {
+    list-style: none;
+    padding: 0;
+  }
 
-	article.chat ul li {
-		margin: 0 0 1em;
-	}
+  article.chat ul li {
+    margin: 0 0 1em;
+  }
 
-	/* figure */
-	figure nav {
-		margin-top: 0;
-	}
+  /* figure */
+  figure nav {
+    margin-top: 0;
+  }
 
-	figure img {
-		height: auto;
-		width: 100%;
-	}
+  figure img {
+    height: auto;
+    width: 100%;
+  }
 
-	figure iframe, figure object, figure video {
-		width: 100%;
-	}
+  figure iframe, figure object, figure video {
+    width: 100%;
+  }
 
-	/* header */
-	header h1 {
-		margin-bottom: 0.236em;
-	}
-	#description {
-		font-size: 0.764em; /* 1 - 0.236 */
-	}
+  /* header */
+  header h1 {
+    margin-bottom: 0.236em;
+  }
+  #description {
+    font-size: 0.764em; /* 1 - 0.236 */
+  }
 
-	/* footer */
-	footer {
-		clear: both;
-		font-size: 0.764em;
-	}
+  /* footer */
+  footer {
+    clear: both;
+    font-size: 0.764em;
+  }
 
-	footer nav {
-		height: 1.618em;
-		margin-bottom: 2.618em;
-	}
+  footer nav {
+    height: 1.618em;
+    margin-bottom: 2.618em;
+  }
 
-	footer form {
-		float: right;
-	}
+  footer form {
+    float: right;
+  }
 
-	/* adaptive */
-	@media screen and (max-width: 840px) {
-		#container { 
-			width: 560px;
-		}
+  #search {
+    bottom: 0.146em;
+    position: relative;
+  }
 
-		header,footer,#main,#side {
-			margin: 0 30px;
-			width: 500px;
-		}
+  /* adaptive */
+  @media screen and (max-width: 840px) {
+    #container { 
+      width: 560px;
+    }
 
-		#side {
-			padding-top: 1em;
-		}
+    header,footer,#main,#side {
+      margin: 0 30px;
+      width: 500px;
+    }
 
-		#likes li img, #likes li iframe, #likes li object {
-			width: 100%;
-		}
-	}
+    #side {
+      padding-top: 1em;
+    }
 
-	@media screen and (max-width: 559px) {
-		#container {
-			width: 480px;
-		}
+    #likes li img, #likes li iframe, #likes li object {
+      width: 100%;
+    }
+  }
 
-		header,footer,#main,#side {
-			margin: 0 30px;
-			width: 420px;
-		}
+  @media screen and (max-width: 559px) {
+    #container {
+      width: 480px;
+    }
 
-		#side {
-			padding-top: 1em;
-		}
+    header,footer,#main,#side {
+      margin: 0 30px;
+      width: 420px;
+    }
 
-		#likes li img, #likes li iframe, #likes li object {
-			width: 100%;
-		}
+    #side {
+      padding-top: 1em;
+    }
 
-	}
-	{CustomCSS}
-	</style>
+    #likes li img, #likes li iframe, #likes li object {
+      width: 100%;
+    }
 
-	<script src="http://static.tumblr.com/gvsbfe2/NRelw0vo2/modernizr-2.0.6.min.js"></script>
+  }
+  {CustomCSS}
+  </style>
+
+  <script src="http://static.tumblr.com/gvsbfe2/F14m6rccd/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
 
 <div id="container">
-	<header>
-		<h1><a href="/">{Title}</a></h1>		
-	</header>
-	<div id="main" role="main">
-	{block:Posts}
-		{block:Text}
-		<article class="hentry text">
-			{block:Title}
-			<h2 class="entry-title">{Title}</h2>
-            {/block:Title}
-            <div class="entry-content">
-            {Body}
-            </div>
-        {/block:Text}
+  <header>
+    <h1><a href="/">{Title}</a></h1>    
+  </header>
+  <div id="main" role="main">
+  {block:Posts}
+    {block:Text}
+    <article class="hentry text">
+      {block:Title}
+      <h2 class="entry-title">{Title}</h2>
+      {/block:Title}
+        <div class="entry-content">
+        {Body}
+        </div>
+    {/block:Text}
 
-        {block:Photo}
-		<article class="hentry photo">
-			<div class="entry-content">
-				<figure>
-					{LinkOpenTag}
-					<img src="{PhotoUrl-500}" alt="{PhotoAlt}" />
-					{LinkCloseTag}
-					<nav>
-						<a class="permalink" href="{LinkURL}">Permalink</a>
-						{block:HighRes}
-						<a class="high-res" href="{PhotoURL-HighRes}">High-res</a>
-						{/block:HighRes}
-					</nav>
-					{block:Caption}
-					<figcaption>
-						{Caption}
-					</figcaption>
-					{/block:Caption}
-				</figure>
-			</div>
-        {/block:Photo}
+    {block:Photo}
+    <article class="hentry photo">
+      <div class="entry-content">
+        <figure>
+          {LinkOpenTag}
+          <img src="{PhotoUrl-500}" alt="{PhotoAlt}" />
+          {LinkCloseTag}
+          <nav>
+            <a class="permalink" href="{LinkURL}">Permalink</a>
+            {block:HighRes}
+            <a class="high-res" href="{PhotoURL-HighRes}">High-res</a>
+            {/block:HighRes}
+          </nav>
+          {block:Caption}
+          <figcaption>
+            {Caption}
+          </figcaption>
+          {/block:Caption}
+        </figure>
+      </div>
+    {/block:Photo}
 
-        {block:Photoset}
-		<article class="hentry photoset">
-			<div class="entry-content">
-				<figure>
-					{Photoset-500}
-				
-					{block:Caption}
-					<figcaption>
-						{Caption}
-					</figcaption>
-					{/block:Caption}
-				</figure>
-			</div>
-        {/block:Photoset}
+    {block:Photoset}
+    <article class="hentry photoset">
+      <div class="entry-content">
+        <figure>
+          {Photoset-500}
+        
+          {block:Caption}
+          <figcaption>
+            {Caption}
+          </figcaption>
+          {/block:Caption}
+        </figure>
+      </div>
+    {/block:Photoset}
 
-        {block:Quote}
-		<article class="hentry quote">
-			<div class="entry-content">
-				<blockquote>{Quote}</blockquote>
-				{block:Source}
-                <p class="source-org vcard">{Source}</p>
-                {/block:Source}
-			</div>
-        {/block:Quote}
+    {block:Quote}
+    <article class="hentry quote">
+      <div class="entry-content">
+        <blockquote>{Quote}</blockquote>
+        {block:Source}
+        <p class="source-org vcard">{Source}</p>
+        {/block:Source}
+      </div>
+    {/block:Quote}
 
-        {block:Link}
-		<article class="hentry link">
-			<h2 class="entry-title"><a href="{URL}" {Target}>{Name}</a></h2>
-			{block:Description}
-			<div class="entry-content">
-			{Description}
-			</div>
-			{/block:Description}
-        {/block:Link}
+    {block:Link}
+    <article class="hentry link">
+      <h2 class="entry-title"><a href="{URL}" {Target}>{Name}</a></h2>
+      {block:Description}
+      <div class="entry-content">
+      {Description}
+      </div>
+      {/block:Description}
+    {/block:Link}
 
-        {block:Chat}
-		<article class="hentry chat">
-			{block:Title}
-			<h2 class="entry-title">{Title}</h2>
-            {/block:Title}
-			<ul class="entry-content">
-				{block:Lines}
-				<li class="{Alt} member{UserNumber}">
-					{block:Label}
-                	<span class="label">{Label}</span>
-                    {/block:Label}
-					{Line}
-				</li>
-				{/block:Lines}
-			</ul>
-        {/block:Chat}
+    {block:Chat}
+    <article class="hentry chat">
+      {block:Title}
+      <h2 class="entry-title">{Title}</h2>
+      {/block:Title}
+      <ul class="entry-content">
+        {block:Lines}
+        <li class="{Alt} member{UserNumber}">
+        {block:Label}
+          <span class="label">{Label}</span>
+        {/block:Label}
+          {Line}
+        </li>
+        {/block:Lines}
+      </ul>
+    {/block:Chat}
 
-        {block:Video}
-		<article class="hentry video">
-			<div class="entry-content">
-				<figure>
-					{Video-500}
-					{block:Caption}
-					<figcaption>
-						{Caption}
-					</figcaption>
-					{/block:Caption}
-				</figure>
-			</div>
-        {/block:Video}
+    {block:Video}
+    <article class="hentry video">
+      <div class="entry-content">
+        <figure>
+          {Video-500}
+          {block:Caption}
+          <figcaption>
+            {Caption}
+          </figcaption>
+          {/block:Caption}
+        </figure>
+      </div>
+    {/block:Video}
 
-        {block:Audio}
-		<article class="hentry audio">
-			<div class="entry-content">
-				<figure>
-					{block:AlbumArt}
-					<img src="{AlbumArtURL}"/>
-					{/block:AlbumArt}
-					<div class="meta">
-						{block:TrackName}
-						<span class="title">{TrackName}</span>
-						{/block:TrackName}
-						{block:Artist}
-						<span class="artist">{Artist}</span>
-						{/block:Artist}
-					</div>
-					{AudioPlayerWhite}
-					{block:Caption}
-					<figcaption>
-						{Caption}
-					</figcaption>
-					{/block:Caption}
-				</figure>
-			</div>
-        {/block:Audio}
-       	
-            <footer>
-	            {block:Date}<time class="updated" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}"><a href="{Permalink}">{TimeAgo}</a></time>{/block:Date}
-	    		{block:NoteCount}<a class="note-count" href="{Permalink}">{NoteCount}</a>{/block:NoteCount}
-				{block:HasTags} 
-				<ul class="tags">
-			    	{block:Tags}
-			  		<li><a href="{TagURL}">#{Tag}</a></li>
-			    	{/block:Tags}
-				</ul>
-			   	{/block:HasTags}
-			   	{block:PermalinkPage}
-			   	{block:PostNotes}{PostNotes}{/block:PostNotes}
-			   {/block:PermalinkPage}   
-            </footer>
-		</article>
-	{/block:Posts}
-	</div>
-	<div id="side" role="side">
-		{block:Description}
-		<aside class="about first">
-			<h3>About</h3>
-			<p id="description">{Description}</p>
+    {block:Audio}
+    <article class="hentry audio">
+      <div class="entry-content">
+        <figure>
+          {block:AlbumArt}
+          <img src="{AlbumArtURL}"/>
+          {/block:AlbumArt}
+          <div class="meta">
+          {block:TrackName}
+          <span class="title">{TrackName}</span>
+          {/block:TrackName}
+          {block:Artist}
+          <span class="artist">{Artist}</span>
+          {/block:Artist}
+          </div>
+          {AudioPlayerWhite}
+          {block:Caption}
+          <figcaption>
+            {Caption}
+          </figcaption>
+          {/block:Caption}
+        </figure>
+      </div>
+    {/block:Audio}
+        
+      <footer>
+        {block:Date}<time class="updated" datetime="{Year}-{MonthNumberWithZero}-{DayOfMonthWithZero}T{24HourWithZero}:{Minutes}:{Seconds}"><a href="{Permalink}">{TimeAgo}</a></time>{/block:Date}
+        {block:NoteCount}<a class="note-count" href="{Permalink}">{NoteCount}</a>{/block:NoteCount}
+        {block:HasTags} 
+        <ul class="tags">
+            {block:Tags}
+            <li><a href="{TagURL}">#{Tag}</a></li>
+            {/block:Tags}
+        </ul>
+        {/block:HasTags}
+        {block:PermalinkPage}
+        {block:PostNotes}{PostNotes}{/block:PostNotes}
+        {/block:PermalinkPage}   
+      </footer>
+    </article>
+  {/block:Posts}
+  </div>
+  <div id="side" role="side">
+    {block:Description}
+    <aside class="about first">
+      <h3>About</h3>
+      <p id="description">{Description}</p>
         </aside>
-       	{/block:Description}
-       	{block:Following}
+        {/block:Description}
+        {block:Following}
         <aside class="following">
-        	<h3>Following</h3>
-        	{block:Followed}<a href="{FollowedURL}"><img src="{FollowedPortraitURL-24}"/></a>{/block:Followed}
-        	<div class="clearfix"></div>
+          <h3>Following</h3>
+          {block:Followed}<a href="{FollowedURL}"><img src="{FollowedPortraitURL-24}"/></a>{/block:Followed}
+          <div class="clearfix"></div>
         </aside>
         {/block:Following}
-       	{block:Likes}
+        {block:Likes}
         <aside class="likes">
-        	<h3>Likes</h3>
-        	{Likes limit="5" summarize="150" width="191"}
-        	<a class="more" href="/liked/by/{Name}">See More »</a>
+          <h3>Likes</h3>
+          {Likes limit="5" summarize="150" width="191"}
+          <a class="more" href="/liked/by/{Name}">See More »</a>
         </aside>
         {/block:Likes}
-    	{block:HasPages}
-    	<nav>
-    		<h3>Pages</h3>
-			{block:Pages}
-			<a href="{URL}">{Label}</a>
-			{/block:Pages}
-		</nav>
-		{/block:HasPages}
-        <nav class="links">
-		</nav>	
-
-	</div>
-	<footer>
-		{block:PermalinkPagination}
-	   	<nav>
-	   		{block:NextPost}<a class="prev" href="{NextPost}">« Previous</a>{/block:NextPost} 
-			{block:PreviousPost}<a class="next" href="{PreviousPost}">Next »</a>{/block:PreviousPost} 
-		</nav>
-	   	{/block:PermalinkPagination}
-	   	{block:IndexPage}
-	   	{block:Pagination}
-	   	<nav>
-	   		{block:PreviousPage}<a class="newer" href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
-			{block:NextPage}<a class="older" href="{NextPage}">Older »</a>{/block:NextPage}
-	   	</nav>
-	   	{/block:Pagination}
-	   	{/block:IndexPage}
-		<a href="{RSS}">RSS</a> / 
-		<a href="/archive">Archive</a> /
-		{block:AskEnabled}
-		<a href="/ask">{AskLabel}</a> /
-		{/block:AskEnabled}
-		{block:SubmissionsEnabled}
-		<a href="/submit">{SubmitLabel}</a> /
-		{/block:SubmissionsEnabled}
-		Theme attribution here
-		<form action="/search" method="get">
-			<input type="text" name="q" value="Search" onclick="javascript:if (this.value == 'Search') this.value = '';">
-		</form>
-	</footer>
+      {block:HasPages}
+      <nav>
+        <h3>Pages</h3>
+        {block:Pages}
+        <a href="{URL}">{Label}</a>
+        {/block:Pages}
+      </nav>
+      {/block:HasPages}  
+  </div>
+  <footer>
+    {block:PermalinkPagination}
+    <nav>
+      {block:NextPost}<a class="prev" href="{NextPost}">« Previous</a>{/block:NextPost} 
+      {block:PreviousPost}<a class="next" href="{PreviousPost}">Next »</a>{/block:PreviousPost} 
+    </nav>
+    {/block:PermalinkPagination}
+    {block:IndexPage}
+    {block:Pagination}
+    <nav>
+      {block:PreviousPage}<a class="newer" href="{PreviousPage}">« Newer</a>{/block:PreviousPage}
+    {block:NextPage}<a class="older" href="{NextPage}">Older »</a>{/block:NextPage}
+    </nav>
+    {/block:Pagination}
+    {/block:IndexPage}
+    <a href="{RSS}">{lang:RSS}</a> / 
+    <a href="/archive">{lang:Archive}</a> /
+    {block:AskEnabled}
+    <a href="/ask">{AskLabel}</a> /
+    {/block:AskEnabled}
+    {block:SubmissionsEnabled}
+    <a href="/submit">{SubmitLabel}</a> /
+    {/block:SubmissionsEnabled}
+    Theme attribution here
+    <form action="/search" method="get">
+      <input type="text" id="search" name="q" value="{lang:Search}" onclick="javascript:if (this.value == '{lang:Search}') this.value = '';">
+    </form>
+  </footer>
 </div>
 
 {block:IfIncludeGoogleAnalytics}
 <script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']]; // Change UA-XXXXX-X to be your site's ID
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+  g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+  s.parentNode.insertBefore(g,s)}(document,'script'));
 </script>
 </meta>
 {/block:IfIncludeGoogleAnalytics}
 
 {block:IfIncludeChromeFrame}
 <!--[if lt IE 7 ]>
-	<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
-	<script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
+  <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
+  <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
 <![endif]-->
 {/block:IfIncludeChromeFrame}
 </body>
